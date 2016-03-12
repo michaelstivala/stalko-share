@@ -22,7 +22,7 @@ $router->post('shares', [
 
 $router->post('share-previews', [
     'as' => 'share-previews.store',
-    'uses' => 'sharePreviewController@store',
+    'uses' => 'SharePreviewController@store',
 ]);
 
 $router->get('/{id}', [

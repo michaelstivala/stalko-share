@@ -1,5 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+    <!-- 
+    -
+    - Hey there {{ $share->name }}!
+    -
+    - If you're looking to download the song that you just heard, I'll save you the trouble.
+    - It's here: {{ asset('/music/a-long-wave-goodbye.mp3') }}
+    -
+    - If you like the song and want to share it with a friend, consider sharing it
+    - through the website itself - your pal might get a kick out of it, and heck,
+    - we might get a ticket sale!
+    -
+    - If you're wondering how this website was developed,
+    - I'll be blogging about it at http://michaelstivala.com
+    -
+    -->
     <head>
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta charset="utf-8">
@@ -27,7 +42,7 @@
         <meta name="msapplication-config" content="/images/favicons/browserconfig.xml">
         <meta name="theme-color" content="#0f6c7c">
         
-        <meta name="og:title" content="{{ $share ? trans('stalko.og-title', ['name' => $share->name]) : 'Stalko - A Long Wave Goodbye' }}"/>
+        <meta name="og:title" content="{{ $share->name !== "Friend" ? trans('stalko.og-title', ['name' => $share->name]) : 'Stalko - A Long Wave Goodbye' }}"/>
         <meta name="og:description" content="{{ trans('stalko.og-description') }}"/>
         <meta name="og:image" content=""/>
 
@@ -51,13 +66,13 @@
 
         @if (App::environment('production'))
           <!-- Google Tag Manager -->
-            <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5LQHS2"
+            <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-M8JHR5"
             height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-5LQHS2');</script>
+            })(window,document,'script','dataLayer','GTM-M8JHR5');</script>
             <!-- End Google Tag Manager -->
         @endif
     </body>
