@@ -14011,7 +14011,11 @@ module.exports = function (id) {
             return document.getElementById(id);
         },
         play: function play() {
-            this.getPlayer().play();
+            if (this.getPlayer().paused) {
+                return this.getPlayer().play();
+            }
+
+            this.getPlayer().pause();
         }
     };
 };

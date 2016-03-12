@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container-fluid bg">
+<div class="container-fluid">
 
     <router-view></router-view>
 
@@ -15,7 +15,7 @@
 </div>
 <footer>
     <div class="text-center">
-        <a href="#" class="padding-vertical-20">{{ trans('stalko.buy-ticket-bar-text') }}<a/>
+        <a href="https://shop.trackagescheme.com/event/stalko-album-launch-palace-theatre-april-9/" target="_blank" class="padding-vertical-20">{{ trans('stalko.buy-ticket-bar-text') }}<a/>
     </div>
 </footer>
 @endsection

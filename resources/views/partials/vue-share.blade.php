@@ -8,7 +8,7 @@
             </div>
             <p class="margin-top-50" >{!! trans('stalko.share-promotional-text') !!}<br/>
             </p>
-            <p><a class="underline" href="#" target="_blank">{{ trans('stalko.share-tickets-link-text') }}</a> | <a class="underline" href="#" v-link="{ path: '/locale' }">{{ trans('stalko.share-again-text') }}</a></p>
+            <p><a class="underline" href="https://shop.trackagescheme.com/event/stalko-album-launch-palace-theatre-april-9/" target="_blank">{{ trans('stalko.share-tickets-link-text') }}</a> | <a class="underline" href="#" v-link="{ path: '/locale' }">{{ trans('stalko.share-again-text') }}</a></p>
         </div>
     </div>
 </template>

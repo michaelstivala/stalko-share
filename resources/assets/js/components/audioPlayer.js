@@ -5,7 +5,11 @@ module.exports = function (id) {
         },
 
         play() {
-            this.getPlayer().play();
+            if (this.getPlayer().paused) {
+                return this.getPlayer().play();
+            }
+
+            this.getPlayer().pause();
         }
     }
 }
