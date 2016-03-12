@@ -5781,6 +5781,10 @@ a, .text-danger {
     color: white; }
   a.play:hover, .text-danger.play:hover {
     color: #0F6C7C; }
+  a.play .glyphicon, .text-danger.play .glyphicon {
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 40px; }
 
 a.underline:hover {
   text-decoration: none;

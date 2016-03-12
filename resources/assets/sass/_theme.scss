@@ -43,6 +43,14 @@ a, .text-danger {
     &.play:hover {
         color: $brand-primary;
     }
+
+    &.play {
+        .glyphicon {
+            display: block;
+            padding-top:20px;
+            padding-bottom:40px;
+        }
+    }
 }
 
 a.underline:hover {
