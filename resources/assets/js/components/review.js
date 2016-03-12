@@ -14,7 +14,7 @@ module.exports = function (store, router) {
         },
         methods: {
             submit() {
-                this.$http.post('/submissions', this.store.getSubmission())
+                this.$http.post('/shares', this.store.getShare())
                     .then(function (response) {
                         // success callback
                         this.store.setUrl(response.data.url);
@@ -24,7 +24,7 @@ module.exports = function (store, router) {
                     });
             },
             fetchPreview() {
-                this.$http.post('/submission-previews', this.store.getSubmission())
+                this.$http.post('/share-previews', this.store.getShare())
                     .then(function (response) {
                         this.preview = response.data.preview;
                     }, function (response) {
@@ -46,11 +46,11 @@ module.exports = function (store, router) {
         },
         computed: {
             language: function () {
-                if (store.getSubmission().locale == "en" ) {
+                if (store.getShare().locale == "en" ) {
                     return "English";
                 }
 
-                if (store.getSubmission().locale == "mt" ) {
+                if (store.getShare().locale == "mt" ) {
                     return "Maltese";
                 }
 

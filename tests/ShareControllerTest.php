@@ -1,20 +1,21 @@
 <?php
 
-use App\Submission;
+use App\Share;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class SubmissionControllerTest extends TestCase
+class ShareControllerTest extends TestCase
 {
     use DatabaseMigrations;
 
     /**
      * @test
+     * @group share
      */
-    public function it_validates_submission()
+    public function it_validates_share()
     {
-        $this->json('POST', '/submissions', [
+        $this->json('POST', '/shares', [
 
         ])->seeJsonStructure(['name', 'message', 'locale']);
 
@@ -24,9 +25,9 @@ class SubmissionControllerTest extends TestCase
     /**
      * @test
      */
-    public function it_redirects_submissions_index()
+    public function it_redirects_shares_index()
     {
-        $this->get('/submissions');
+        $this->get('/shares');
 
         $this->assertRedirectedToRoute('homepage');
     }
@@ -34,9 +35,9 @@ class SubmissionControllerTest extends TestCase
     /**
      * @test
      */
-    public function it_saves_submission()
+    public function it_saves_share()
     {
-        $this->json('POST', '/submissions', [
+        $this->json('POST', '/shares', [
             'name' => 'Paul',
             'message' => 'I heard you were stuck at home studying :(',
             'locale' => 'en',
@@ -44,7 +45,7 @@ class SubmissionControllerTest extends TestCase
 
         $this->assertResponseStatus(200);
 
-        $this->seeInDatabase('submissions', [
+        $this->seeInDatabase('shares', [
             'name' => 'Paul',
             'message' => 'I heard you were stuck at home studying :(',
             'locale' => 'en',
@@ -54,7 +55,7 @@ class SubmissionControllerTest extends TestCase
     /**
      * @test
      */
-    public function it_bails_when_looking_for_nonexistant_submission()
+    public function it_bails_when_looking_for_nonexistant_share()
     {
         $this->get('/9');
 
@@ -64,15 +65,15 @@ class SubmissionControllerTest extends TestCase
     /**
      * @test
      */
-    public function it_passes_submission_to_view()
+    public function it_passes_share_to_view()
     {
-        $submission = factory(Submission::class)->create();
+        $share = factory(Share::class)->create();
 
-        $this->get("/{$submission->id}");
+        $this->get("/{$share->id}");
 
         $this->assertResponseStatus(200);
 
-        $this->assertViewHas(['submission' => $submission->fresh()]);
+        $this->assertViewHas(['share' => $share->fresh()]);
     }
 
     /**
@@ -80,11 +81,11 @@ class SubmissionControllerTest extends TestCase
      */
     public function it_sets_locale_to_mt()
     {
-        $submission = factory(Submission::class)->create([
+        $share = factory(Share::class)->create([
             'locale' => 'mt'
         ]);
 
-        $this->visit("/{$submission->id}");
+        $this->visit("/{$share->id}");
 
         $this->assertEquals('mt', app()->getLocale());
     }
@@ -94,11 +95,11 @@ class SubmissionControllerTest extends TestCase
      */
     public function it_sets_locale_to_en()
     {
-        $submission = factory(Submission::class)->create([
+        $share = factory(Share::class)->create([
             'locale' => 'en'
         ]);
 
-        $this->visit("/{$submission->id}");
+        $this->visit("/{$share->id}");
 
         $this->assertEquals('en', app()->getLocale());
     }
@@ -106,12 +107,12 @@ class SubmissionControllerTest extends TestCase
     /**
      * @test
      */
-    public function it_displays_submission()
+    public function it_displays_share()
     {
-        $submission = factory(Submission::class)->create();
+        $share = factory(Share::class)->create();
 
-        $this->visit("/{$submission->id}")
-            ->see(trans('stalko.salutation', ['name' => $submission->name]))
-            ->see($submission->message);
+        $this->visit("/{$share->id}")
+            ->see(trans('stalko.salutation', ['name' => $share->name]))
+            ->see($share->message);
     }
 }

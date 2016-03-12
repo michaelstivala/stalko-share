@@ -5,10 +5,10 @@
         <div transition="fade">
             <div class="row text-center">
                 <div class="col-xs-12 text-huge" v-show="show_salutation" transition="slow-fade">
-                    {{ trans('stalko.salutation', ['name' => ucwords($submission->name)]) }}
+                    {{ trans('stalko.salutation', ['name' => ucwords($share->name)]) }}
                 </div>
                 <div class="col-xs-12 text-huge" v-show="show_message" transition="slow-fade">
-                    {{ $submission->message }}
+                    {{ $share->message }}
                 </div>
 
                 <div  class="col-xs-12 text-huge margin-vertical-50" v-show="show_cto" transition="slow-fade">

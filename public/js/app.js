@@ -13967,6 +13967,7 @@ function merge(target, source, deep) {
 'use strict';
 
 // Pull in and configure our dependencies
+
 var Vue = require('Vue');
 var VueRouter = require('vue-router');
 Vue.use(VueRouter);
@@ -14116,7 +14117,7 @@ module.exports = function (store, router) {
         },
         methods: {
             submit: function submit() {
-                this.$http.post('/submissions', this.store.getSubmission()).then(function (response) {
+                this.$http.post('/shares', this.store.getShare()).then(function (response) {
                     // success callback
                     this.store.setUrl(response.data.url);
                     router.go('/share');
@@ -14125,7 +14126,7 @@ module.exports = function (store, router) {
                 });
             },
             fetchPreview: function fetchPreview() {
-                this.$http.post('/submission-previews', this.store.getSubmission()).then(function (response) {
+                this.$http.post('/share-previews', this.store.getShare()).then(function (response) {
                     this.preview = response.data.preview;
                 }, function (response) {
                     this.handleErrors(response.data);
@@ -14146,11 +14147,11 @@ module.exports = function (store, router) {
         },
         computed: {
             language: function language() {
-                if (store.getSubmission().locale == "en") {
+                if (store.getShare().locale == "en") {
                     return "English";
                 }
 
-                if (store.getSubmission().locale == "mt") {
+                if (store.getShare().locale == "mt") {
                     return "Maltese";
                 }
 
@@ -14228,7 +14229,7 @@ module.exports = function (audioPlayer) {
 "use strict";
 
 module.exports = {
-    submission: {
+    share: {
         locale: null,
         name: null,
         message: null
@@ -14240,13 +14241,13 @@ module.exports = {
     },
     url: null,
     setLocale: function setLocale(locale) {
-        this.submission.locale = locale;
+        this.share.locale = locale;
     },
     setName: function setName(name) {
-        this.submission.name = name;
+        this.share.name = name;
     },
     setMessage: function setMessage(message) {
-        this.submission.message = message;
+        this.share.message = message;
     },
     setErrors: function setErrors(errors) {
         this.errors.locale = errors.locale;
@@ -14259,8 +14260,8 @@ module.exports = {
     setMessageError: function setMessageError(error) {
         this.errors.message = error;
     },
-    getSubmission: function getSubmission() {
-        return this.submission;
+    getShare: function getShare() {
+        return this.share;
     },
     getErrors: function getErrors() {
         return this.errors;

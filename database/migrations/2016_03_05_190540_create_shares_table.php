@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSubmissionsTable extends Migration
+class CreateSharesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateSubmissionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('submissions', function (Blueprint $table) {
+        Schema::create('shares', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->text('message');
@@ -28,6 +28,6 @@ class CreateSubmissionsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('submissions');
+        Schema::drop('shares');
     }
 }

@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Submission;
+use App\Share;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreSubmissionRequest;
+use App\Http\Requests\StoreShareRequest;
 
-class SubmissionPreviewController extends Controller
+class SharePreviewController extends Controller
 {
-    public function store(StoreSubmissionRequest $request)
+    public function store(StoreShareRequest $request)
     {
         app()->setLocale($request->locale);
         

@@ -1,11 +1,11 @@
 <?php
 
-use App\Submission;
+use App\Share;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class SubmissionPreviewControllerTest extends TestCase
+class SharePreviewControllerTest extends TestCase
 {
     use DatabaseMigrations;
 
@@ -14,7 +14,7 @@ class SubmissionPreviewControllerTest extends TestCase
      */
     public function it_validates_preview()
     {
-        $this->json("POST", "/submission-previews", [
+        $this->json("POST", "/share-previews", [
 
         ])->seeJsonStructure(['locale', 'name', 'message']);
     }
@@ -24,7 +24,7 @@ class SubmissionPreviewControllerTest extends TestCase
      */
     public function it_generates_preview()
     {
-        $this->json("POST", "/submission-previews", [
+        $this->json("POST", "/share-previews", [
             'locale' => 'en',
             'name' => 'Mike',
             'message' => 'I heard you liked music.'
@@ -39,7 +39,7 @@ class SubmissionPreviewControllerTest extends TestCase
      */
     public function it_generates_preview_in_maltese()
     {
-        $this->json("POST", "/submission-previews", [
+        $this->json("POST", "/share-previews", [
             'locale' => 'mt',
             'name' => 'Mike',
             'message' => 'I heard you liked music.'

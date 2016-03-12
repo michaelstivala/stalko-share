@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Submission extends Model
+class Share extends Model
 {
     protected $fillable = [
         'name',
@@ -12,7 +12,7 @@ class Submission extends Model
         'locale',
     ];
 
-    public static function getDefaultSubmission()
+    public static function getDefaultShare()
     {
         return self::firstOrNew([
             'name' => 'Friend',

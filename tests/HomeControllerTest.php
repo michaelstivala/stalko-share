@@ -1,6 +1,6 @@
 <?php
 
-use App\Submission;
+use App\Share;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
@@ -12,14 +12,14 @@ class HomeControllerTest extends TestCase
     /**
      * @test
      */
-    public function it_passes_the_default_submission_to_homepage()
+    public function it_passes_the_default_share_to_homepage()
     {
-        $submission = Submission::getDefaultSubmission();
+        $share = Share::getDefaultShare();
 
         $this->get("/");
 
         $this->assertResponseStatus(200);
 
-        $this->assertViewHas(['submission' => $submission]);
+        $this->assertViewHas(['share' => $share]);
     }
 }

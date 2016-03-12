@@ -11,23 +11,23 @@
 |
 */
 
-$router->get('submissions', function () {
+$router->get('shares', function () {
     return redirect()->route('homepage');
 });
 
-$router->post('submissions', [
-    'as' => 'submissions.store',
-    'uses' => 'SubmissionController@store',
+$router->post('shares', [
+    'as' => 'shares.store',
+    'uses' => 'ShareController@store',
 ]);
 
-$router->post('submission-previews', [
-    'as' => 'submission-previews.store',
-    'uses' => 'SubmissionPreviewController@store',
+$router->post('share-previews', [
+    'as' => 'share-previews.store',
+    'uses' => 'sharePreviewController@store',
 ]);
 
 $router->get('/{id}', [
-    'as' => 'submissions.show',
-    'uses' => 'SubmissionController@show',
+    'as' => 'shares.show',
+    'uses' => 'ShareController@show',
 ]);
 
 $router->get('/', [

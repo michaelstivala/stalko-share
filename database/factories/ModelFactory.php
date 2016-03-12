@@ -11,7 +11,7 @@
 |
 */
 
-$factory->define(App\Submission::class, function (Faker\Generator $faker) {
+$factory->define(App\Share::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'message' => $faker->sentence,

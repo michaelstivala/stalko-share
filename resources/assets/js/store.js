@@ -1,5 +1,5 @@
 module.exports = {
-    submission: {
+    share: {
         locale: null,
         name: null,
         message: null
@@ -11,13 +11,13 @@ module.exports = {
     },
     url: null,
     setLocale: function(locale) {
-        this.submission.locale = locale;
+        this.share.locale = locale;
     },
     setName: function(name) {
-        this.submission.name = name;
+        this.share.name = name;
     },
     setMessage: function(message) {
-        this.submission.message = message;
+        this.share.message = message;
     },
     setErrors: function (errors) {
         this.errors.locale = errors.locale;
@@ -30,8 +30,8 @@ module.exports = {
     setMessageError: function (error) {
         this.errors.message = error;
     },
-    getSubmission: function () {
-        return this.submission;
+    getShare: function () {
+        return this.share;
     },
     getErrors: function() {
         return this.errors;
