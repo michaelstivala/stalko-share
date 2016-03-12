@@ -5749,17 +5749,14 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
-html {
-  min-height: 100%; }
-
 html, body, .container-fluid {
   height: 100%;
   color: white;
   font-weight: 100;
   letter-spacing: 0.5px; }
 
-body {
-  position: relative; }
+html {
+  min-height: 100%; }
 
 input, .form-control {
   background-color: transparent;
@@ -5796,16 +5793,10 @@ a.underline:hover {
   width: 100%; }
 
 .aligner {
-  height: 100%;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%); }
 
 .form-control, .form-control:focus {
   box-shadow: none;
@@ -5823,6 +5814,9 @@ a.underline:hover {
 
 #player {
   display: none; }
+
+body.padded {
+  margin-bottom: 60px; }
 
 .btn {
   border: none;
@@ -5846,7 +5840,7 @@ a.underline:hover {
   margin-bottom: 50px !important; }
 
 footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   background-color: #f5f5f5;

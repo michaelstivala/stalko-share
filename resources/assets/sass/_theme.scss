@@ -1,16 +1,12 @@
-html {
-    min-height: 100%;
-}
+
 html, body, .container-fluid {
     height: 100%;
     color: white;
     font-weight: 100;
     letter-spacing: 0.5px;
 }
-
-
-body {
-    position: relative;
+html {
+    min-height: 100%;
 }
 
 input, .form-control {
@@ -66,10 +62,9 @@ a.underline:hover {
 }
 
 .aligner {
-    height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .form-control, .form-control:focus {
@@ -91,4 +86,10 @@ a.underline:hover {
 
 #player { 
     display: none;
+}
+
+body {
+    &.padded {
+        margin-bottom: 60px;
+    }
 }
