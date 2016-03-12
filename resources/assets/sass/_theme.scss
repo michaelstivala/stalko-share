@@ -19,17 +19,6 @@ input, .form-control {
     font-size: ceil(($font-size-base * 1.2));
 }
 
-.btn {
-    border: none;
-    padding: 12px 20px;
-
-    &.btn-primary {
-        &:hover {
-            background: white;
-            color: $brand-primary;
-        }
-    }
-}
 .bg {
     // background-image: url(https://images.unsplash.com/photo-1418226970361-9f1f7227d638?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=383740e17e2453e03d39f27a2d12c566);
     // background-image: url(http://40.media.tumblr.com/c53eaa42e0de0dec51c17a079aaa52a5/tumblr_n56na0MRlH1sfie3io1_1280.jpg);
@@ -65,90 +54,11 @@ a.underline:hover {
     border-bottom: 2px solid white;
 }
 
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background-color: #f5f5f5;
-    height: 60px;
-
-    a {
-        background-color: $brand-primary;
-        display: block;
-        color: white;
-        font-weight: bold;
-
-        &:hover {
-            background-color: white;
-            text-decoration: none;
-            color: $brand-primary;
-        }
-    }
-}
-
 .menu {
     position: absolute;
     top: 0;
     width: 100%;
     // padding-right: 30px;
-}
-
-.padding-vertical-20 {
-    padding-top: 20px !important;
-    padding-bottom: 20px !important;
-}
-.margin-top-50 {
-    margin-top: 50px !important;
-}
-.margin-top-0 {
-    margin-top: 0 !important;
-}
-.margin-vertical-50 {
-    margin-top: 50px!important;
-    margin-bottom: 50px!important;
-}
-
-.text-large {
-    font-size: ceil(($font-size-base * 1.2));
-}
-
-.text-larger {
-    font-size: ceil(($font-size-base * 2));
-}
-
-.text-huge {
-    font-size: ceil(($font-size-base * 4));
-}
-
-/* always present */
-.fade-transition, .slow-fade-transition {
-  transition: all .5s ease;
-  opacity: 1;
-}
-
-.slow-fade-transition {
-    transition: all 2s ease;
-}
-
-/* .fade-enter defines the starting state for entering */
-/* .fade-leave defines the ending state for leaving */
-.fade-enter, .slow-fade-enter {
-  opacity: 0;
-}
-
-.fade-leave, .slow-fade-leave {
-    display: none !important;
-}
-
-.slow-fade-expand-transition {
-    transition: all .5s ease;
-      opacity: 1;
-      height:  100px;
-}
-
-.slow-fade-expand-enter {
-    opacity: 0;
-    height: 0;
 }
 
 .aligner {

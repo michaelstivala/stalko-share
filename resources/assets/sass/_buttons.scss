@@ -1,0 +1,11 @@
+.btn {
+    border: none;
+    padding: 12px 20px;
+
+    &.btn-primary {
+        &:hover {
+            background: white;
+            color: $brand-primary;
+        }
+    }
+}

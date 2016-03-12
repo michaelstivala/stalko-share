@@ -1,0 +1,30 @@
+/* always present */
+.fade-transition, .slow-fade-transition {
+  transition: all .5s ease;
+  opacity: 1;
+}
+
+.slow-fade-transition {
+    transition: all 2s ease;
+}
+
+/* .fade-enter defines the starting state for entering */
+/* .fade-leave defines the ending state for leaving */
+.fade-enter, .slow-fade-enter {
+  opacity: 0;
+}
+
+.fade-leave, .slow-fade-leave {
+    display: none !important;
+}
+
+.slow-fade-expand-transition {
+    transition: all .5s ease;
+      opacity: 1;
+      height:  100px;
+}
+
+.slow-fade-expand-enter {
+    opacity: 0;
+    height: 0;
+}

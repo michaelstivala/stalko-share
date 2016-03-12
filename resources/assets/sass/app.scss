@@ -1,3 +1,8 @@
-@import "variables";
+@import "_variables";
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-@import "theme";
+@import "_theme";
+@import "_buttons";
+@import "_spacing";
+@import "_footer";
+@import "_typography";
+@import "_animations";
