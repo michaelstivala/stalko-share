@@ -5774,9 +5774,6 @@ input, .form-control {
   background: rgba(255, 255, 255, 0.5);
   padding: 20px; }
 
-h2 {
-  margin-top: 0; }
-
 a, .text-danger {
   font-weight: bold;
   color: white; }
@@ -5862,6 +5859,10 @@ footer {
 
 .text-huge {
   font-size: 56px; }
+
+@media (max-width: 767px) {
+  .text-huge {
+    font-size: 7.4vw; } }
 
 h2 {
   margin-top: 0; }

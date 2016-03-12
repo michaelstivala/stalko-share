@@ -15,13 +15,13 @@
 }
 
 .fade-leave, .slow-fade-leave {
-    display: none !important;
+  display: none !important;
 }
 
 .slow-fade-expand-transition {
-    transition: all .5s ease;
-      opacity: 1;
-      height:  100px;
+  transition: all .5s ease;
+  opacity: 1;
+  height:  100px;
 }
 
 .slow-fade-expand-enter {

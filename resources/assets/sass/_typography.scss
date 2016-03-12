@@ -1,5 +1,11 @@
 .text-huge {
-    font-size: ceil(($font-size-base * 4));
+    font-size: 56px;
+}
+
+@media (max-width: $screen-xs-max) {
+    .text-huge {
+        font-size: 7.4vw;
+    }
 }
 
 h2 {
