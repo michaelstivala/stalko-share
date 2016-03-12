@@ -5774,8 +5774,9 @@ input, .form-control {
 a, .text-danger {
   font-weight: bold;
   color: white; }
-  a:hover, .text-danger:hover {
-    color: white; }
+  a:hover, a:focus, .text-danger:hover, .text-danger:focus {
+    color: white;
+    text-decoration: none; }
   a.play:hover, .text-danger.play:hover {
     color: #0F6C7C; }
   a.play .glyphicon, .text-danger.play .glyphicon {

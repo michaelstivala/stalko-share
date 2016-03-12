@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=11">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='http://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
-        
+
         <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-touch-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-touch-icon-60x60.png">
         <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-touch-icon-72x72.png">
@@ -27,6 +27,10 @@
         <meta name="msapplication-config" content="/images/favicons/browserconfig.xml">
         <meta name="theme-color" content="#0f6c7c">
         
+        <meta name="og:title" content="{{ $share ? trans('stalko.og-title', ['name' => $share->name]) : 'Stalko - A Long Wave Goodbye' }}"/>
+        <meta name="og:description" content="{{ trans('stalko.og-description') }}"/>
+        <meta name="og:image" content=""/>
+
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

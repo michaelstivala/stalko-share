@@ -32,8 +32,9 @@ a, .text-danger {
     font-weight: bold;
     color: white;
 
-    &:hover {
+    &:hover, &:focus {
         color: white;
+        text-decoration: none;
     }
 
     &.play:hover {

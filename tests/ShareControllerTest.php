@@ -115,4 +115,15 @@ class ShareControllerTest extends TestCase
             ->see(trans('stalko.salutation', ['name' => $share->name]))
             ->see($share->message);
     }
+
+    /**
+     * @test
+     */
+    public function it_displays_personalised_og_title()
+    {
+        $share = factory(Share::class)->create();
+
+        $this->visit("/{$share->id}")
+            ->see(trans('stalko.og-title', ['name' => $share->name]));
+    }
 }

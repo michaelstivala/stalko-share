@@ -1,4 +1,5 @@
 // Pull in and configure our dependencies
+
 var Vue = require('Vue');
 var VueRouter = require('vue-router');
 Vue.use(VueRouter);

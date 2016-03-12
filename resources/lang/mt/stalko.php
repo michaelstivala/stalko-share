@@ -27,4 +27,7 @@ return [
     'validation.message.required' => "Insejt tikteb il-messaġġ. Piżella.",
     'validation.locale.required' => "Insejt tagħzel lingwa.",
     'validation.locale.in' => "Għażilt lingwa ħażina. Ġaħan.",
+
+    'og-title' => ':name, dan Għalik!',
+    'og-description' => "Listen to Stalko's title track from their second album 'A Long Wave Goodbye'. The album will be launched on the 9th of April.",
 ];

@@ -25,4 +25,7 @@ return [
     'validation.message.required' => "You must write a message",
     'validation.locale.required' => "You must pick a language",
     'validation.locale.in' => "The language you picked isn't supported",
+
+    'og-title' => ':name, This is for You!',
+    'og-description' => "Listen to Stalko's title track from their second album 'A Long Wave Goodbye'. The album will be launched on the 9th of April.",
 ];
