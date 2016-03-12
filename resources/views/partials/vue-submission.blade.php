@@ -26,7 +26,7 @@
                         </audio>
                     </div>
 
-                    <div class="text-center" v-show="show_button" transition="slow-fade">
+                    <div class="text-center" v-if="show_button" transition="slow-fade-expand">
                         <button class="btn btn-primary"  v-link="{ path: '/locale' }">{{ trans('stalko.share-button-text') }}</button>
                         <button v-on:click="animate()" class="btn btn-primary">{{ trans('stalko.replay-button-text') }}</button>
                     </div>
