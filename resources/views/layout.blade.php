@@ -2,7 +2,7 @@
 <html lang="en">
     <!-- 
     -
-    - Hey there {{ $share->name }}!
+    - {{ trans('stalko.salutation', ['name' => ucwords($share->name)]) }},
     -
     - If you're looking to download the song that you just heard, I'll save you the trouble.
     - It's here: {{ asset('/music/a-long-wave-goodbye.mp3') }}

@@ -2,7 +2,7 @@
     <div class="row text-center aligner" transition="fade">
         
         <div class="col-xs-12">
-            <h2>{{ trans('stalko.share-header-text') }}<br/>{{ trans('stalko.share-instructions') }} <strong>@{{ this.store.getSubmission().name }}</strong>!</h2>
+            <h2>{{ trans('stalko.share-header-text') }}<br/>{{ trans('stalko.share-instructions') }} <strong>@{{ this.store.getShare().name }}</strong>!</h2>
             <div class="form-group">
                 <input class="margin-top-50 text-larger form-control width-300" type="text" v-bind:value="store.getUrl()" v-el:url>
             </div>

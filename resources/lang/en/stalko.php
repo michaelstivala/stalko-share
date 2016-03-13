@@ -28,4 +28,6 @@ return [
 
     'og-title' => ':name, This is for You!',
     'og-description' => "Listen to Stalko's title track from their second album 'A Long Wave Goodbye'. The album will be launched on the 9th of April.",
+
+    'continue-instructions' => 'Press Enter to continue.',
 ];

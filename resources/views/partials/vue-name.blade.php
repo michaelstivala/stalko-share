@@ -8,7 +8,7 @@
                 </div>
             </form>
 
-            <p class="text-danger">@{{ store.getErrors().name }}</p>
+            <p class="text-danger">{{ store.getErrors().name || '<?php echo trans("stalko.continue-instructions"); ?>' }}</p>
         </div>
     </div>
 </template>

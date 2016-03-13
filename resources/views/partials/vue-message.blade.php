@@ -9,7 +9,7 @@
                 </div>
             </form>
 
-            <p class="text-danger">@{{ store.getErrors().message }}</p>
+            <p class="text-danger">{{ store.getErrors().message || '<?php echo trans("stalko.continue-instructions"); ?>' }}</p>
         </div>
     </div>
 </template>
