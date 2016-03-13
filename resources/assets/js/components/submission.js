@@ -8,6 +8,7 @@ module.exports = function (audioPlayer) {
                 show_cto: false,
                 show_button: false,
                 player: audioPlayer,
+                paused: true,
             }
         },
         ready: function () {
@@ -35,6 +36,15 @@ module.exports = function (audioPlayer) {
             },
             play() {
                 this.player.play();
+                this.paused = this.player.isPaused();
+            }
+        },
+        computed: {
+            playButtonClasses: function () {
+                return { 
+                    "glyphicon-play": this.paused,
+                    "glyphicon-pause": ! this.paused
+                }
             }
         }
     }

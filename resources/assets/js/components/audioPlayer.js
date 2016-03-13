@@ -5,11 +5,23 @@ module.exports = function (id) {
         },
 
         play() {
-            if (this.getPlayer().paused) {
+            if (this.isPaused()) {
                 return this.getPlayer().play();
             }
 
             this.getPlayer().pause();
+        },
+
+        isPaused() {
+            if (this.getPlayer() == null) {
+                return true;
+            }  
+
+            return this.getPlayer().paused;
+        },
+
+        isPlaying() {
+            return ! this.isPaused();
         }
     }
 }

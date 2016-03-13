@@ -13972,7 +13972,7 @@ var Vue = require('Vue');
 var VueRouter = require('vue-router');
 Vue.use(VueRouter);
 Vue.use(require('vue-resource'));
-// Vue.config.debug = true;
+Vue.config.debug = true;
 var router = new VueRouter();
 
 var store = require('./store.js');
@@ -14011,11 +14011,21 @@ module.exports = function (id) {
             return document.getElementById(id);
         },
         play: function play() {
-            if (this.getPlayer().paused) {
+            if (this.isPaused()) {
                 return this.getPlayer().play();
             }
 
             this.getPlayer().pause();
+        },
+        isPaused: function isPaused() {
+            if (this.getPlayer() == null) {
+                return true;
+            }
+
+            return this.getPlayer().paused;
+        },
+        isPlaying: function isPlaying() {
+            return !this.isPaused();
         }
     };
 };
@@ -14196,7 +14206,8 @@ module.exports = function (audioPlayer) {
                 show_message: false,
                 show_cto: false,
                 show_button: false,
-                player: audioPlayer
+                player: audioPlayer,
+                paused: true
             };
         },
         ready: function ready() {
@@ -14224,6 +14235,15 @@ module.exports = function (audioPlayer) {
             },
             play: function play() {
                 this.player.play();
+                this.paused = this.player.isPaused();
+            }
+        },
+        computed: {
+            playButtonClasses: function playButtonClasses() {
+                return {
+                    "glyphicon-play": this.paused,
+                    "glyphicon-pause": !this.paused
+                };
             }
         }
     };

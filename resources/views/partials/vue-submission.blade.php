@@ -18,12 +18,7 @@
                     
                     <div class="">
 
-                        <a href="#" class="play"><span v-on:click="play()" class="glyphicon glyphicon-play-circle"></span></a>
-                        <audio id="player" controls>
-                          <source src="/music/a-long-wave-goodbye.mp3" type="audio/mpeg">
-                          <source src="/music/a-long-wave-goodbye.ogg" type="audio/ogg">
-                        Your browser does not support the audio element.
-                        </audio>
+                        <a href="#" class="play"><span v-on:click="play()" class="glyphicon" v-bind:class="playButtonClasses"></span></a>
                     </div>
 
                     <div class="text-center" v-if="show_button" transition="slow-fade-expand">
