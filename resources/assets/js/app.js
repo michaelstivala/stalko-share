@@ -1,10 +1,8 @@
-// Pull in and configure our dependencies
-
 var Vue = require('Vue');
 var VueRouter = require('vue-router');
 Vue.use(VueRouter);
 Vue.use(require('vue-resource'));
-Vue.config.debug = true;
+
 var router = new VueRouter();
 
 var store = require('./store.js');

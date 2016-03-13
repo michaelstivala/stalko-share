@@ -3,7 +3,8 @@ module.exports = function (store, router) {
         template: "#locale",
         data: function () {
             return {
-                store: store
+                store: store,
+                router: router
             }
         },
         methods: {

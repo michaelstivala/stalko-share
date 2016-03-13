@@ -41,7 +41,9 @@ class ShareControllerTest extends TestCase
             'name' => 'Paul',
             'message' => 'I heard you were stuck at home studying :(',
             'locale' => 'en',
-        ])->seeJsonStructure(['url']);
+        ])->seeJson([
+            'url' => route('shares.show', 1)
+        ]);
 
         $this->assertResponseStatus(200);
 
