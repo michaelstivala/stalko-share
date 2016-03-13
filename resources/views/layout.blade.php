@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
     <!-- 
     -
     - {{ trans('stalko.salutation', ['name' => ucwords($share->name)]) }},
